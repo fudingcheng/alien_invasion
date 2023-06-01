@@ -39,7 +39,7 @@ class Ship:
 
     """根据移动标志，控制飞船的左移和右移"""
 
-    def update_position(self):
+    def move_position(self):
         # 更新飞船的位置
         if self.move_left and self.rect.left > 0 :
             self.x -= self.settings.ship_speed
@@ -49,3 +49,4 @@ class Ship:
         self.rect.x = self.x
 
         # logging.info(f"飞船当前的位置是:{self.x}")
+
