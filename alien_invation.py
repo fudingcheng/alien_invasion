@@ -203,11 +203,14 @@ class AlienInvasion:
 
     """更新外星人"""
     def _update_aliens(self):
-        self._chect_fleet_edges()
+        self._check_fleet_edges()
         self.aliens.update()
+        # 判断外星人是否碰撞上飞船
+        if pygame.sprite.spritecollideany(self.ship,self.aliens):
+            print("Ship hit!!!")
 
     """检测外星人是否碰到屏幕边缘，如果碰到边缘的话就改变方向"""
-    def _chect_fleet_edges(self):
+    def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
             if alien.check_edges():
                 self._change_fleet_direction()
