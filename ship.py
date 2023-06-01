@@ -50,3 +50,7 @@ class Ship:
 
         # logging.info(f"飞船当前的位置是:{self.x}")
 
+    """把飞船移动到屏幕底部中央"""
+    def center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
